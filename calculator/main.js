@@ -9,6 +9,12 @@ const ageError = document.getElementById('ageError');
 const cityError = document.getElementById('cityError');
 const hobbyError = document.getElementById('hobbyError');
 
+const displayName = document.getElementById('displayName');
+const displayAge = document.getElementById('displayAge');
+const displayCity = document.getElementById('displayCity');
+const displayHobby = document.getElementById('displayHobby');
+const profileCard = document.getElementById('profileCard');
+
 function validateForm() {
     let isValid = true;
     
@@ -43,7 +49,19 @@ function validateForm() {
     return isValid;
 }
 
+
+function displayProfile() {
+    displayName.textContent = nameInput.value;
+    displayAge.textContent = ageInput.value;
+    displayCity.textContent = cityInput.value;
+    displayHobby.textContent = hobbyInput.value;
+    profileCard.style.display = 'block';
+}
+
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    validateForm();
+    
+    if (validateForm()) {
+        displayProfile();
+    }
 });
