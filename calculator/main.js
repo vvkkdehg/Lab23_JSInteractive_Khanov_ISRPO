@@ -15,6 +15,8 @@ const displayCity = document.getElementById('displayCity');
 const displayHobby = document.getElementById('displayHobby');
 const profileCard = document.getElementById('profileCard');
 
+const clearBtn = document.getElementById('clearBtn');
+
 function validateForm() {
     let isValid = true;
     
@@ -65,3 +67,20 @@ form.addEventListener('submit', function(e) {
         displayProfile();
     }
 });
+
+
+
+function clearForm() {
+    nameInput.value = '';
+    ageInput.value = '';
+    cityInput.value = '';
+    hobbyInput.value = '';
+    profileCard.style.display = 'none';
+    
+    nameError.style.display = 'none';
+    ageError.style.display = 'none';
+    cityError.style.display = 'none';
+    hobbyError.style.display = 'none';
+}
+
+clearBtn.addEventListener('click', clearForm);
